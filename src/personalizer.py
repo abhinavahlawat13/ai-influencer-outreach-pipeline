@@ -10,10 +10,7 @@ class OutreachMessage(BaseModel):
     collaboration_angle: str = Field(description="Proposed angle such as Sponsored Integration, UGC, or Affiliate.")
 
 class MessagePersonalizer:
-    """
-    Uses Gemini API to dynamically generate personalized outreach messages
-    tailored to each gaming creator's specific niche and recent content.
-    """
+#using gemini API 
     def __init__(self):
         self.client = genai.Client(api_key=GEMINI_API_KEY) if GEMINI_API_KEY else None
 

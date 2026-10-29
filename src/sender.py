@@ -6,10 +6,7 @@ import pandas as pd
 from config import SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SIMULATION_MODE
 
 class OutreachSender:
-    """
-    Handles sending outreach, preventing duplicate emails,
-    logging interactions in SQLite, and exporting the final outreach tracker CSV.
-    """
+ 
     def __init__(self, db_path: str = "data/outreach.db", tracker_csv: str = "data/outreach_tracker.csv"):
         self.db_path = db_path
         self.tracker_csv = tracker_csv
@@ -88,7 +85,6 @@ class OutreachSender:
             """, (name, email, insta, email_pitch, insta_dm, status, timestamp))
 
     def export_tracker_csv(self):
-        """Dumps SQLite database into the mandatory Outreach Tracker CSV (Deliverable D)."""
         with sqlite3.connect(self.db_path) as conn:
             df = pd.read_sql_query("""
                 SELECT 
