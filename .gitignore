@@ -1,0 +1,8 @@
+# Environments & Virtual Environments
+venv/
+.env
+__pycache__/
+*.pyc
+
+# Local Databases & Data outputs (optional, keep data/ tracked if you want csv in repo)
+data/outreach.db
